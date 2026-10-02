@@ -47,6 +47,19 @@
 .estrela { color: var(--latao); }
 .hero-foto { margin: 0; position: relative; aspect-ratio: 4 / 5; overflow: hidden; }
 .hero-foto img { position: absolute; inset: -8% 0 auto; width: 100%; height: 116%; object-fit: cover; object-position: 50% 15%; }
+/* Celular: o retrato vem primeiro e o título sobe sobre o degradê, para rosto, título e CTA caberem na primeira tela. */
+@media (max-width: 899px) {
+  .hero-texto, .hero-foto { grid-area: 1 / 1; }
+  .hero-foto { aspect-ratio: auto; height: 58svh; min-height: 20rem; align-self: start; }
+  .hero-foto::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15, 28, 46, 0) 32%, rgba(15, 28, 46, .82) 62%, var(--tinta) 92%); }
+  /* O bloco de texto (~33rem) termina perto da base da tela; nunca sobe além de 12rem, para não cobrir o rosto. */
+  .hero-texto { padding-top: max(12rem, calc(100svh - var(--header-h) - 33rem)); }
+  .h1-local { margin-bottom: 1rem; }
+  .traco-hero { height: 2rem; margin: .75rem 0 1.25rem; }
+  .hero .acoes { margin-top: 1.75rem; }
+}
+/* Celulares baixos (ex.: 360×740): o traço sai do hero (volta em Naturalidade) para o botão caber na primeira tela. */
+@media (max-width: 899px) and (max-height: 760px) { .hero .traco-hero { display: none; } .hero-lead { margin-top: 1.25rem; } .hero .acoes { margin-top: 1.5rem; } }
 @media (min-width: 900px) {
   .hero { min-height: 100svh; }
   .hero-grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); min-height: calc(100svh - var(--header-h)); }
@@ -255,6 +268,12 @@
 .rodape-legal { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--linha-clara); }
 .rodape-legal p { max-width: none; }
 @media (min-width: 800px) { .rodape-grid { grid-template-columns: 2fr 1.2fr 1.6fr 1fr; } .rodape { padding-bottom: 4rem; } }
+/* Celular: links do rodapé com área de toque de ~44px. */
+@media (max-width: 799px) {
+  .rodape a { display: inline-block; padding-block: .7rem; }
+  .rodape-links li + li { margin-top: 0; }
+  .redes { margin-top: .5rem; gap: 1.75rem; }
+}
 
 /* ---------- páginas internas ---------- */
 .pag-cabeca { padding: calc(var(--header-h) + clamp(3rem, 8vw, 7rem)) 0 clamp(3rem, 6vw, 5rem); }

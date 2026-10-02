@@ -71,7 +71,7 @@
 .comparar-palco img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .comparar-depois { clip-path: inset(0 0 0 var(--pos)); }
 .comparar-palco::after { content: ""; position: absolute; top: 0; bottom: 0; left: var(--pos); width: 2px; margin-left: -1px; background: var(--papel); pointer-events: none; box-shadow: 0 0 0 1px rgba(15, 28, 46, .25); }
-.comparar-rot { position: absolute; bottom: .75rem; font-size: var(--t-mini); font-weight: 600; color: var(--papel); background: rgba(15, 28, 46, .72); padding: .2rem .5rem; pointer-events: none; }
+.comparar-rot { position: absolute; bottom: .75rem; font-size: .875rem; font-weight: 600; color: var(--papel); background: rgba(15, 28, 46, .72); padding: .2rem .5rem; pointer-events: none; }
 .comparar-rot-a { left: .75rem; }
 .comparar-rot-d { right: .75rem; }
 .comparar-range { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; -webkit-appearance: none; appearance: none; }
@@ -127,10 +127,16 @@
 @media (min-width: 1100px) { .menu-btn { display: none; } }
 .topo-cta { display: none; }
 @media (min-width: 1100px) { .topo-cta { display: inline-flex; } }
+/* Celular: cada critério vira um bloco, título em cima e as duas técnicas lado a lado embaixo. */
 @media (max-width: 599px) {
-  .tabela { min-width: 0; font-size: var(--t-mini); }
-  .tabela thead th { font-size: 1rem; }
-  .tabela th, .tabela td { padding-right: .6rem; }
+  .tabela { min-width: 0; }
+  .tabela caption { display: block; }
+  .tabela tr { display: grid; grid-template-columns: 1fr 1fr; column-gap: 1rem; border-bottom: 1px solid var(--linha); }
+  .tabela th, .tabela td { border: 0; padding: 0 0 1rem; }
+  .tabela thead tr { border-bottom-color: var(--tinta); }
+  .tabela thead th { font-size: 1.125rem; padding-bottom: .75rem; }
+  .tabela thead th:first-child { display: none; }
+  .tabela tbody th { grid-column: 1 / -1; width: auto; padding: 1rem 0 .35rem; }
 }
 
 /* ---------- pré-avaliação ---------- */

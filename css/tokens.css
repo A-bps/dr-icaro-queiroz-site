@@ -24,7 +24,7 @@
 
   /* espaço */
   --gutter: clamp(1.25rem, .6rem + 3vw, 3rem);
-  --secao: clamp(5rem, 3rem + 9vw, 11rem);
+  --secao: clamp(4rem, 1.5rem + 11vw, 11rem);
   --max: 1440px;
   --texto: 64ch;
 
