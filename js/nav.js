@@ -21,7 +21,7 @@
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') { setMenu(false); btn.focus(); }
     });
-    matchMedia('(min-width: 1100px)').addEventListener('change', (e) => { if (e.matches) setMenu(false); });
+    matchMedia('(min-width: 1240px)').addEventListener('change', (e) => { if (e.matches) setMenu(false); });
   }
 
   // Topo: esconde ao descer, mostra ao subir.

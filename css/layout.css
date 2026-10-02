@@ -14,11 +14,11 @@
 .marca img { height: 34px; width: auto; }
 .nav, .topo-cta { display: none; }
 .nav ul { display: flex; gap: clamp(1rem, 1.6vw, 2rem); }
-.nav a { font-size: var(--t-peq); text-decoration: none; color: var(--pedra-clara); padding-block: .5rem; position: relative; transition: color var(--rapido); }
+.nav a { white-space: nowrap; font-size: var(--t-peq); text-decoration: none; color: var(--pedra-clara); padding-block: .5rem; position: relative; transition: color var(--rapido); }
 .nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: .2rem; height: 1px; background: var(--latao); transform: scaleX(0); transform-origin: left; transition: transform .3s var(--ease); }
 .nav a:hover, .nav a[aria-current="page"] { color: var(--papel); }
 .nav a:hover::after, .nav a[aria-current="page"]::after { transform: scaleX(1); }
-@media (min-width: 1100px) {
+@media (min-width: 1240px) {
   .nav, .topo-cta { display: flex; }
   .menu-btn { display: none; }
 }

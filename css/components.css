@@ -12,7 +12,7 @@
 .btn-latao:hover { background: #D6B65E; }
 .btn-contorno { border-color: var(--tinta); color: var(--tinta); }
 .btn-contorno:hover { background: var(--tinta); color: var(--papel); }
-.topo-cta { min-height: 2.75rem; padding: .6rem 1.15rem; }
+.topo-cta { min-height: 2.75rem; padding: .6rem 1.15rem; white-space: nowrap; }
 
 .link, .link-claro {
   font-weight: 500; text-decoration: none; padding-block: .35rem;
@@ -112,7 +112,7 @@
 .wa-flutua { position: fixed; right: 1rem; bottom: calc(1rem + env(safe-area-inset-bottom)); z-index: 40; display: inline-flex; align-items: center; gap: .5rem; min-height: 48px; padding: 0 1.1rem; background: var(--tinta); color: var(--papel); border: 1px solid var(--latao); border-radius: 999px; font-size: var(--t-peq); font-weight: 600; text-decoration: none; transition: transform .35s var(--ease), opacity .35s; }
 .wa-flutua svg { color: var(--latao); }
 .wa-flutua.is-hidden { transform: translateY(150%); opacity: 0; pointer-events: none; }
-@media (min-width: 1100px) { .wa-flutua { display: none; } }
+@media (min-width: 1240px) { .wa-flutua { display: none; } }
 
 /* ---------- estados iniciais para animação (só com JS e movimento permitido) ---------- */
 @media (prefers-reduced-motion: no-preference) {
@@ -124,9 +124,9 @@
   .js [data-mask] { clip-path: inset(12% 8% 12% 8%); }
 }
 
-@media (min-width: 1100px) { .menu-btn { display: none; } }
+@media (min-width: 1240px) { .menu-btn { display: none; } }
 .topo-cta { display: none; }
-@media (min-width: 1100px) { .topo-cta { display: inline-flex; } }
+@media (min-width: 1240px) { .topo-cta { display: inline-flex; } }
 /* Celular: cada critério vira um bloco, título em cima e as duas técnicas lado a lado embaixo. */
 @media (max-width: 599px) {
   .tabela { min-width: 0; }
@@ -171,3 +171,7 @@
 .quiz-resumo dt, .quiz-resumo dd { padding: .75rem 0; border-bottom: 1px solid var(--linha); margin: 0; }
 .quiz-resumo dt { font-weight: 600; padding-right: 1rem; }
 .quiz-corrigir { background: none; border: 0; padding-inline: 0; }
+
+/* Chamada para a página em 3D (home e Dúvidas) */
+.chamada-3d { margin-top: 1.5rem; }
+.pag-cabeca .chamada-3d { color: var(--pedra-clara); }
