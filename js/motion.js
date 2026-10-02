@@ -36,10 +36,17 @@
   }
 
   // 2. Revelações de texto: discretas, em lote, uma vez.
+  // Num salto pelo menu o lote junta dezenas de itens: o que já passou aparece na hora,
+  // e a cascata do que está na tela é limitada a 0,5 s (senão o destino só surgia ~5 s depois).
   ScrollTrigger.batch('[data-reveal]', {
     start: 'top 88%',
     once: true,
-    onEnter: (els) => gsap.to(els, { opacity: 1, y: 0, duration: 0.9, stagger: 0.08, ease: 'power3.out', overwrite: true }),
+    onEnter: (els) => {
+      const passou = els.filter((el) => el.getBoundingClientRect().bottom < 0);
+      const naTela = els.filter((el) => !passou.includes(el));
+      if (passou.length) gsap.set(passou, { opacity: 1, y: 0, overwrite: true });
+      gsap.to(naTela, { opacity: 1, y: 0, duration: 0.9, stagger: Math.min(0.08, 0.5 / naTela.length), ease: 'power3.out', overwrite: true });
+    },
   });
 
   // 3. Fotos: a máscara abre conforme a foto entra; a imagem dentro faz parallax leve.
