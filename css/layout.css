@@ -273,3 +273,5 @@
 .duv-pagina > * { max-width: 860px; }
 .res-pagina, .duv-pagina { padding-top: clamp(3rem, 6vw, 5rem); }
 .quiz-wrap > * { max-width: 860px; }
+.pre-cabeca { padding-bottom: clamp(2rem, 4vw, 3rem); }
+.pre-cabeca + .secao { padding-top: clamp(2.5rem, 5vw, 4rem); }
